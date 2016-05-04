@@ -114,7 +114,14 @@ function setup_gnuplot(gnuplot, options) {
   if (options.ylabel) {
     gnuplot.stdin.write('set ylabel "'+options.ylabel+'"\n');
   }
-
+  
+  /* Set extra option parameters */
+  if (options.options) {
+    for (var i = 0; i < options.options.length; i += 1) {
+      gnuplot.stdin.write('set '+options.options[i]+'\n');
+    }
+  }
+  
   /* Setup ticks */
   gnuplot.stdin.write('set grid xtics ytics mxtics\n');
   gnuplot.stdin.write('set mxtics\n');

@@ -59,6 +59,7 @@ The following properties can be used:
 - `style` : _The style of the lines on the graph. Possibilites include
   `lines` (default), `points` and `linespoints`_
 - `nokey` : _Disables the graph key_
+- `options` : _Sets extra option parameters_
 
 The following example shows these in use:
 
@@ -71,7 +72,8 @@ plot({
 	logscale:	true,
 	xlabel:		'time',
 	ylabel:		'length of string',
-	format:		'pdf'
+	format:		'pdf',
+	options:	['xrange [0:120]', 'yrange [1000:2500]'],
 });
 ```
 
